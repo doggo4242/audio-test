@@ -33,6 +33,7 @@ int main(){
 	fwrite(buf,1,sizeof(buf),fp);
 	fclose(fp);
 	PlaySound(TEXT("amogus.wav"),NULL,SND_SYNC);
+	remove("amogus.wav");
 #elif defined(__linux__)
 	pa_sample_spec spec;
 	spec.format = PA_SAMPLE_FLOAT32LE;
