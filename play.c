@@ -2,7 +2,7 @@
 #if defined(_WIN32)
 #include <stdio.h>
 #include <stdint.h>
-//#include <windows.h>
+#include <windows.h>
 #elif defined(__linux__)
 #include <pulse/simple.h>
 #endif
@@ -14,8 +14,8 @@ int main(){
 	fwrite(header,1,sizeof(header),fp);
 	fwrite(buf,1,sizeof(buf),fp);
 	fclose(fp);
-//	PlaySound(TEXT("amogus.wav"),NULL,SND_SYNC);
-//	remove("amogus.wav");
+	PlaySound(TEXT("amogus.wav"),NULL,SND_SYNC);
+	remove("amogus.wav");
 #elif defined(__linux__)
 	pa_sample_spec spec;
 	spec.format = PA_SAMPLE_FLOAT32LE;
